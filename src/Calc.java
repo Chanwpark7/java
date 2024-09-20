@@ -33,8 +33,13 @@ public class Calc {
 		
 		if(checkOp(z)) {
 			if(z.equals("/")) {
-				double ans=(double)x/y;
-				System.out.println(x+z+y+"="+ans);
+				if(x%y != 0) {
+					double ans=(double)x/y;
+					System.out.println(x+z+y+"="+ans);
+				}else {
+					int ans = x/y;
+					System.out.println(x+z+y+"="+ans);
+				}
 			}else {
 				System.out.println(x+z+y+"="+calc(x,y,z));
 			}
