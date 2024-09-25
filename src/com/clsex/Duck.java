@@ -6,7 +6,7 @@
  */
 package com.clsex;
 
-public class Duck {
+public class Duck extends Animal{
 	/*
 	 * 클래스의 필드 : 멤버필드(non-static field)일반적으로 객체의 속성을 나타내는 영역. 이 필드의 값에 따라서 객체의 상태가 변경될 수 있으며
 	 * ex) 파랑색 속성의 차에 빨강색을 주면 다른 컬러의 차가 되듯
@@ -38,16 +38,17 @@ public class Duck {
 	//같은 이름으로 정의하고, 파라미터만 틀리게 받을 수 있게 하여 정의 및 사용하는데 편의성을 더할 수 있다.
 	//메서드, 생성자에 오버로딩을 결정짓는 요소인 파라미터의 갯수, 순서, 타입을 시그니쳐라고 한다.
 	//이 시그니쳐가 모두 똑같지 않다면 틀린 메소드로 인식한다.
-	public Duck(String breed) {
-		this.breed = breed;
-	}
+//	public Duck(String breed) {
+//		this.breed = breed;
+//	}
 	
 	public Duck(String name, String breed) {//생성자 오버로딩
 		//생성자 this() : 기 정의된 생성자를 다른 생성자에서 호출하는 방법
 		//반드시 생성자 첫머리에서만 호출 가능함.
 		
-		//this.breed = breed;
-		this(breed);
+		super("Duck");
+		this.breed = breed;
+		//this(breed);
 		this.name = name;
 	}
 	
@@ -58,6 +59,11 @@ public class Duck {
 	
 	public void sound() {
 		System.out.println("GGwackGGwack");
+	}
+	
+	//알을 낳는 메소드 추가
+	public void layEggs() {
+		System.out.println("OnAir) 황금알 낳는 오리");
 	}
 	
 	//getter 메소드. private 으로 캡슐화 되어진 필드의 값을 리턴하도록 하는 기능의 메소드.

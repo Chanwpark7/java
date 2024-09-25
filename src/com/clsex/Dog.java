@@ -6,7 +6,7 @@
  */
 package com.clsex;
 
-public class Dog {
+public class Dog extends Animal{
 	/*
 	 * 클래스의 필드 : 멤버필드(non-static field)일반적으로 객체의 속성을 나타내는 영역. 이 필드의 값에 따라서 객체의 상태가 변경될 수 있으며
 	 * ex) 파랑색 속성의 차에 빨강색을 주면 다른 컬러의 차가 되듯
@@ -38,16 +38,17 @@ public class Dog {
 	//같은 이름으로 정의하고, 파라미터만 틀리게 받을 수 있게 하여 정의 및 사용하는데 편의성을 더할 수 있다.
 	//메서드, 생성자에 오버로딩을 결정짓는 요소인 파라미터의 갯수, 순서, 타입을 시그니쳐라고 한다.
 	//이 시그니쳐가 모두 똑같지 않다면 틀린 메소드로 인식한다.
-	public Dog(String breed) {
-		this.breed = breed;
-	}
+//	public Dog(String breed) {
+//		this.breed = breed;
+//	}
 	
 	public Dog(String name, String breed) {//생성자 오버로딩
 		//생성자 this() : 기 정의된 생성자를 다른 생성자에서 호출하는 방법
 		//반드시 생성자 첫머리에서만 호출 가능함.
 		
-		//this.breed = breed;
-		this(breed);
+		super("Dog");
+		//this(breed);
+		this.breed = breed;
 		this.name = name;
 	}
 	
@@ -56,8 +57,16 @@ public class Dog {
 		this.age = age;
 	}
 	
-	public void sound() {
-		System.out.println("wallwall");
+	/*
+	 * 메소드 오버라이딩(Overriding) : 상속받은 부모의 메소드의 내용부를 자식의 목적에 맞게 재정의 하는 것.
+	 * 이때 주의해야 할 것은 
+	 * 1. 접근 제어자(public>protected>default>private)가 부모와 같거나 더 커야함.
+	 * 2. 반드시 내용부만 재정의 돼야 하고, 파라미터나 리턴 타입등은 변경되어선 안됨.
+	 * 만약 변경되어진 경우엔, 오버라이딩이 아닌 메소드를 추가한 것으로 간주됨.
+	 */
+	@Override //어노테이션 컴파일이나 실행시에 규칙을 체크하는 기법.
+	public String toString() {
+		return super.toString() + " 이름은 "+name+" 품종은 "+breed;
 	}
 	
 	//getter 메소드. private 으로 캡슐화 되어진 필드의 값을 리턴하도록 하는 기능의 메소드.
@@ -83,6 +92,11 @@ public class Dog {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	@Override
+	public void sound() {
+		System.out.println("wallwall");
 	}
 	
 }
