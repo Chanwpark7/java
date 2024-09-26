@@ -64,6 +64,6 @@ public class GamePlay {
 	}
 	
 	public void GameEnd() {
-		System.out.println("총 전적 : "+total+"\n승 : "+win+"\n패 : "+lose+"\n무승부 : "+draw+"\n승률 : "+win*100/(double)total+"%");
+		System.out.println("총 전적 : "+total+"\n승 : "+win+"\n패 : "+lose+"\n무승부 : "+draw+"\n승률 : "+(int)(win*100/(double)total)+"%");
 	}
 }
