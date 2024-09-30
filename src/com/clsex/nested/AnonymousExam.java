@@ -61,7 +61,7 @@ abstract class MyAnony{
 		
 	}
 }
-public class AnonmousExam {
+public class AnonymousExam {
 	
 	private RemoteControl rc = new RemoteControl() {
 		
@@ -140,7 +140,7 @@ public class AnonmousExam {
 		};
 		
 		//인터페이스를 구현한 구현객체인 익명구현객체 사용예시
-		AnonmousExam home = new AnonmousExam();
+		AnonymousExam home = new AnonymousExam();
 		
 		home.use1();
 		home.use2();
