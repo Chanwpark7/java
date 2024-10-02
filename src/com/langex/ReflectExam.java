@@ -1,6 +1,7 @@
 package com.langex;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +22,7 @@ import my_lib.userlib.MyClassA;
  * 3. ref변수.getClass()
  */
 public class ReflectExam {
-	public static void main(String[] args) throws ClassNotFoundException, IOException {
+	public static void main(String[] args) throws ClassNotFoundException, FileNotFoundException, IOException {
 		Class cls = null;
 		
 		cls = ReflectExam.class;
