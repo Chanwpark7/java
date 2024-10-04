@@ -1,6 +1,7 @@
 package com.utilex.collection;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -44,6 +45,7 @@ public class ListExam {
 		for(Board brd : list) {
 			System.out.println(brd);
 		}
+		
 		
 		//list.clear();
 		System.out.println(list.size());
