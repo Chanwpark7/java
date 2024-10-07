@@ -6,17 +6,24 @@ class Account{
 	public Account(int balance) {
 		this.balance = balance;
 	}
+	void doSome() {
+		System.out.println(balance);
+	}
 	
-	synchronized void setBalance1(int money) {
-		this.balance = money;
+	void setBalance1(int money) {
 		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		//동기화 블락 : 동기화가 필요한 코드에 synchronized(공유 객체명)을 선언하고
+		//코드를 적용하면, 동기화 메소드와 동일한 효과를 얻어낼 수 있다.
+		synchronized(this) {
+			this.balance = money;
+			
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println(Thread.currentThread().getName()+"현재 작액 : "+balance);
 		}
-		
-		System.out.println(Thread.currentThread().getName()+"현재 작액 : "+balance);
 	}
 	
 	synchronized void setBalance2(int money) {
@@ -72,5 +79,6 @@ public class SyncExam {
 		UseThread2 t2 = new UseThread2("Thread2");
 		t2.setAccount(account);
 		t2.start();
+		
 	}
 }
