@@ -1,0 +1,8 @@
+1	{"pno":1, "name":"상품1", "company":"samsung", "price":20000}
+2	{"pno":2, "name":"상품2", "company":"LG", "price":12300}
+3	{"pno":3, "name":"상품3", "company":"lotte", "price":42000}
+4	{"pno":4, "name":"상품4", "company":"kia", "price":23500}
+5	{"pno":5, "name":"상품5", "company":"hyundai", "price":52300}
+6	{"pno":6, "name":"상품6", "company":"ssg", "price":17000}
+7	{"pno":7, "name":"상품7", "company":"apple", "price":94000}
+8	{"pno":8, "name":"상품8", "company":"kt", "price":47200}
