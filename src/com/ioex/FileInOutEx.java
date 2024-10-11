@@ -23,8 +23,8 @@ public class FileInOutEx {
 			fileOutput = new FileOutputStream(BACKUP);
 			int readData = 0;
 			
-			fileInput.transferTo(System.err);
-			fileInput = new FileInputStream(SOURCE);
+//			fileInput.transferTo(System.err);
+//			fileInput = new FileInputStream(SOURCE);
 			
 			fileInput.transferTo(fileOutput);
 			

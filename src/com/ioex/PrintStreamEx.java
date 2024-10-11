@@ -15,10 +15,13 @@ import java.io.PrintStream;
  * 이놈과 똑같은 기능을 하는 Writer 는 PrintWriter 임. 
  */
 public class PrintStreamEx {
-	public static void main(String[] args) throws FileNotFoundException{
+	public static void main(String[] args) throws Exception{
 		PrintStream ps = new PrintStream(new FileOutputStream("printStr.data"),true);
 		
 		ps.println("hello World");
+		ps.write(1);
+		ps.write(2);
+		ps.write(3);
 		ps.print(false);
 		ps.print(new PrintStreamEx());
 		
