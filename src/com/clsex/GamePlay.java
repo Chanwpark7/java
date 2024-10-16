@@ -1,13 +1,14 @@
 package com.clsex;
 
+import java.io.File;
+
 public class GamePlay {
-	private static double counter;
 	private static int win;
 	private static int lose;
 	private static int draw;
 	private static int total;
 
-	public void gamePlay(int comp) {
+	public void gamePlay(File file, int comp) {
 		int ran = (int)(Math.random()*3);
 		if(ran==0) {
 			if(comp==1) {

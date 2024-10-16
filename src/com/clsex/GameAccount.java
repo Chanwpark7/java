@@ -1,10 +1,13 @@
 package com.clsex;
 
-import java.util.List;
-
 public class GameAccount {
 	private String ID;
 	private String PW;
+	private int win;
+	private int lose;
+	private int draw;
+	private int total;
+	
 
 	public String getID() {
 		return ID;

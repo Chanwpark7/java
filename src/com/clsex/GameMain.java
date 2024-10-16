@@ -2,8 +2,11 @@ package com.clsex;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -14,7 +17,6 @@ public class GameMain {
 		GameAccount ga = null;
 		boolean run = true;
 		boolean isStarted = false;
-		GameUser gameStart = new GameUser();
 		
 		//실행시 user 폴더 생성
 		File dirs = new File("E:"+File.separator+"user");
@@ -36,6 +38,13 @@ public class GameMain {
 				
 				if(file.exists()) {//존재 여부 확인
 					ga = new GameAccount(id, pw);
+					
+					try {
+						InputStreamReader isr = new FileReader(file);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					
 					Calendar now = Calendar.getInstance();
 					System.out.println("마지막으로 로그인 한 시각 : "+now.get(Calendar.YEAR)+"년 "+(now.get(Calendar.MONTH)+1)+"월 "+now.get(Calendar.DATE)+"일 "+now.get(Calendar.HOUR_OF_DAY)+":"+now.get(Calendar.MINUTE)+":"+now.get(Calendar.SECOND));
 					
@@ -45,8 +54,20 @@ public class GameMain {
 					String strY = sc.nextLine();
 					int intY = Integer.parseInt(strY);
 					if(intY == 1) {
+						System.out.println("게임 시작\n---------------------\n");
 						while(isStarted) {
-							gameStart.gameUser();
+							System.out.println("가위|바위|보");
+							String strZ = sc.nextLine();
+							GamePlay game = new GamePlay();
+							game.gamePlay(file,game.user(strZ));
+							
+							System.out.println("---------------------\n계속 하시겠습니까? y|n");
+							String strC = sc.nextLine();
+							if("n".equals(strC)) {
+								game.GameEnd();
+								System.out.println("프로그램을 종료합니다.");
+								System.exit(0);
+							}
 						}
 					}else if(intY == 2) {
 						System.out.println(2);
