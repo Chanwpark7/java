@@ -1,9 +1,10 @@
 package com.clsex;
 
+import java.util.List;
+
 public class GameAccount {
 	private String ID;
 	private String PW;
-	
 
 	public String getID() {
 		return ID;

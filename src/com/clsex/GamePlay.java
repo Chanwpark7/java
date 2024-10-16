@@ -7,7 +7,7 @@ public class GamePlay {
 	private static int draw;
 	private static int total;
 
-	public GamePlay(int comp) {
+	public void gamePlay(int comp) {
 		int ran = (int)(Math.random()*3);
 		if(ran==0) {
 			if(comp==1) {
@@ -61,6 +61,19 @@ public class GamePlay {
 				System.out.println("당신 : 보\n컴퓨터 : 보\n무승부");
 			}
 		}
+	}
+	
+	public int user(String z) {
+		if("가위".equals(z)) {
+			return 0;
+		}
+		if("바위".equals(z)) {
+			return 1;
+		}
+		if("보".equals(z)) {
+			return 2;
+		}
+		return 3;
 	}
 	
 	public void GameEnd() {

@@ -46,7 +46,9 @@ public class GawiBawiBo {
 			while(run){
 				System.out.println("가위|바위|보");
 				String strZ = scanner.nextLine();
-				GamePlay game = new GamePlay(Game(strZ));
+				GamePlay game = new GamePlay();
+				game.gamePlay(game.user(strZ));
+				
 				System.out.println("---------------------\n계속 하시겠습니까? y|n");
 				String strC = scanner.nextLine();
 				if("n".equals(strC)) {
@@ -56,18 +58,5 @@ public class GawiBawiBo {
 				}
 			}
 		}
-	}
-	
-	public static int Game(String z) {
-		if("가위".equals(z)) {
-			return 0;
-		}
-		if("바위".equals(z)) {
-			return 1;
-		}
-		if("보".equals(z)) {
-			return 2;
-		}
-		return 3;
 	}
 }
